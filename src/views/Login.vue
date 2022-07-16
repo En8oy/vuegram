@@ -36,7 +36,8 @@
   </div>
 </template>
 <script lang="ts" setup>
-    import { ref } from 'vue';
+    import { ref, onMounted } from 'vue';
+    import firebase from '../firebase'
     const countries = ref('MX')
     const code = ref('+52')
     const searchCode = async () :Promise<void> =>{
@@ -48,6 +49,11 @@
             console.log(error)
         }
     }
+
+    onMounted(() => {
+        console.log(firebase)
+    })
+
 </script>
 <style lang="scss" scoped>
   .login {
